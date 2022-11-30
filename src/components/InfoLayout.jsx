@@ -10,6 +10,7 @@ import BoxFlex from "../shared/BoxFlex";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 
+// Icon imports
 import P2Picon from "../assets/P2P_icon.png";
 import F2Picon from "../assets/F2P_icon.png";
 

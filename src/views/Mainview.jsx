@@ -32,7 +32,7 @@ const DUMMY_DATA = [
 const Mainview = () => {
   const itemList = DUMMY_DATA.map((data) => {
     return (
-      <Grid item xs={12} key={data.itemId} marginBottom={1}>
+      <Grid item xs={12} md={8} key={data.itemId} marginBottom={1}>
         <InfoLayout
           itemId={data.itemId}
           name={data.name}
@@ -48,7 +48,17 @@ const Mainview = () => {
   return (
     <section>
       <h1>The Mainview Page</h1>
-      <Grid container>{itemList}</Grid>
+      <Grid container justifyContent="center">
+        {itemList}
+      </Grid>
+      <Button
+        variant="contained"
+        style={{
+          textTransform: "none",
+        }}
+      >
+        Submit
+      </Button>
     </section>
   );
 };

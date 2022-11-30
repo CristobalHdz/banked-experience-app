@@ -3,6 +3,7 @@ import InfoLayout from "../components/InfoLayout";
 
 // MUI imports
 import Grid from "@mui/material/Grid";
+import Button from "@mui/material/Button";
 
 const DUMMY_PLAYER = {
   rsName: "lalala",

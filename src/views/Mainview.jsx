@@ -3,6 +3,10 @@ import InfoLayout from "../components/InfoLayout";
 
 // MUI imports
 import Grid from "@mui/material/Grid";
+import Button from "@mui/material/Button";
+
+// Item info
+import itemInfo from "../DataArray/ItemInfo.js";
 
 const DUMMY_PLAYER = {
   rsName: "lalala",
@@ -10,29 +14,10 @@ const DUMMY_PLAYER = {
   cookingXp: 101333,
 };
 
-const DUMMY_DATA = [
-  {
-    itemId: 1,
-    member: true,
-    name: "raw rocktail",
-    experience: 245,
-    level: 85,
-    imageUrl: "https://runescape.wiki/images/Raw_rocktail.png?f05cc",
-  },
-  {
-    itemId: 2,
-    member: false,
-    name: "raw shrimp",
-    experience: 31.8,
-    level: 1,
-    imageUrl: "https://runescape.wiki/images/Raw_shrimps.png?575eb",
-  },
-];
-
 const Mainview = () => {
-  const itemList = DUMMY_DATA.map((data) => {
+  const itemList = itemInfo.map((data) => {
     return (
-      <Grid item xs={12} key={data.itemId} marginBottom={1}>
+      <Grid item xs={12} sm={10} md={7} key={data.itemId} marginBottom={1}>
         <InfoLayout
           itemId={data.itemId}
           name={data.name}
@@ -48,7 +33,17 @@ const Mainview = () => {
   return (
     <section>
       <h1>The Mainview Page</h1>
-      <Grid container>{itemList}</Grid>
+      <Grid container justifyContent="center">
+        {itemList}
+      </Grid>
+      <Button
+        variant="contained"
+        style={{
+          textTransform: "none",
+        }}
+      >
+        Submit
+      </Button>
     </section>
   );
 };

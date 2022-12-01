@@ -4,12 +4,18 @@
  */
 
 // Components imports
+
+//TODO: FIX HOW THE INPUT LOOKS
+//TODO: FIX HOW THE TABLE LOOKS WHEN CHANGING FROM SM TO XS
+
 import BoxFlex from "../shared/BoxFlex";
 
 // MUI imports
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
+import TextField from "@mui/material/TextField";
 
+// Icon imports
 import P2Picon from "../assets/P2P_icon.png";
 import F2Picon from "../assets/F2P_icon.png";
 
@@ -45,7 +51,7 @@ const InfoLayout = (props) => {
 
         {/* Level */}
         <Grid item xs={6} sm={2}>
-          <BoxFlex>
+          <BoxFlex borderStyle={0.5}>
             <p>
               level: <b>{props.level}</b>
             </p>
@@ -54,7 +60,7 @@ const InfoLayout = (props) => {
 
         {/* Experience per item */}
         <Grid item xs={6} sm={2}>
-          <BoxFlex>
+          <BoxFlex borderStyle={0.5}>
             <p>
               XP: <b>{props.experience}</b>
             </p>
@@ -62,13 +68,23 @@ const InfoLayout = (props) => {
         </Grid>
 
         {/* Value input */}
-        <Grid item xs={12} sm={4}>
-          <BoxFlex flexDirection="column">
-            <Box flexDirection="column" pb={1}>
-              <div>Amount:</div>
-              <input type="number" />
-            </Box>
-          </BoxFlex>
+        <Grid
+          item
+          xs={5}
+          sm={4}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Box>
+            <TextField
+              type="number"
+              variant="outlined"
+              size="small"
+              label="Amount"
+              sx={{ my: 1 }}
+            />
+          </Box>
         </Grid>
       </Grid>
     </>

@@ -1,4 +1,4 @@
-module.exports = [
+const itemInfo = [
   {
     itemId: 1,
     name: "Raw karambwanji",
@@ -54,7 +54,6 @@ module.exports = [
     experience: 201.4,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_karambwan.png?eef09",
-    altName: "Hello, it is me A Friend",
   },
   {
     itemId: 8,
@@ -175,7 +174,6 @@ module.exports = [
     experience: 31.8,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_lava_eel.png?4f671",
-    altName: "This doesn't make any sense at all",
   },
   {
     itemId: 23,
@@ -308,3 +306,5 @@ module.exports = [
     imageUrl: "https://runescape.wiki/images/Raw_sailfish.png?6f620",
   },
 ];
+
+export default itemInfo;

@@ -3,11 +3,13 @@
  * @returns row layout
  */
 
-// Components imports
-
 //TODO: FIX HOW THE INPUT LOOKS
 //TODO: FIX HOW THE TABLE LOOKS WHEN CHANGING FROM SM TO XS
 
+// React imports
+import React from "react";
+
+// Components imports
 import BoxFlex from "../shared/BoxFlex";
 
 // MUI imports
@@ -19,7 +21,7 @@ import TextField from "@mui/material/TextField";
 import P2Picon from "../assets/P2P_icon.png";
 import F2Picon from "../assets/F2P_icon.png";
 
-const InfoLayout = (props) => {
+const InfoLayout = React.forwardRef((props, ref) => {
   return (
     <>
       <Grid container sx={{ backgroundColor: "#917676", border: 1 }}>
@@ -77,7 +79,9 @@ const InfoLayout = (props) => {
           justifyContent="center"
         >
           <Box>
-            <TextField
+            <input
+              ref={ref}
+              name={props.name}
               type="number"
               variant="outlined"
               size="small"
@@ -89,6 +93,6 @@ const InfoLayout = (props) => {
       </Grid>
     </>
   );
-};
+});
 
 export default InfoLayout;

@@ -1,3 +1,6 @@
+// React imports
+import React, { useRef, useState } from "react";
+
 // Components imports
 import InfoLayout from "../components/InfoLayout";
 
@@ -15,6 +18,18 @@ const DUMMY_PLAYER = {
 };
 
 const Mainview = () => {
+  const [itemValue, setItemValue] = useState({ name: "", value: "" });
+
+  const amountInputRef = useRef();
+
+  const formSubmitHandler = (event) => {
+    event.preventDefault();
+
+    // const itemSum =
+
+    console.log(itemValue);
+  };
+
   const itemList = itemInfo.map((data) => {
     return (
       <Grid item xs={12} sm={10} md={7} key={data.itemId} marginBottom={1}>
@@ -25,18 +40,20 @@ const Mainview = () => {
           imageUrl={data.imageUrl}
           level={data.level}
           experience={data.experience}
+          ref={amountInputRef}
         />
       </Grid>
     );
   });
 
   return (
-    <section>
+    <form onSubmit={formSubmitHandler}>
       <h1>The Mainview Page</h1>
       <Grid container justifyContent="center">
         {itemList}
       </Grid>
       <Button
+        type="submit"
         variant="contained"
         style={{
           textTransform: "none",
@@ -44,7 +61,7 @@ const Mainview = () => {
       >
         Submit
       </Button>
-    </section>
+    </form>
   );
 };
 

@@ -10,18 +10,18 @@
 import React from "react";
 
 // Components imports
-import BoxFlex from "../shared/BoxFlex";
+import BoxFlex from "../../shared/BoxFlex";
+import ItemXpQuantity from "./ItemXpQuantity";
 
 // MUI imports
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import TextField from "@mui/material/TextField";
 
 // Icon imports
-import P2Picon from "../assets/P2P_icon.png";
-import F2Picon from "../assets/F2P_icon.png";
+import P2Picon from "../../assets/P2P_icon.png";
+import F2Picon from "../../assets/F2P_icon.png";
 
-const InfoLayout = React.forwardRef((props, ref) => {
+const ItemData = React.forwardRef((props, ref) => {
   return (
     <>
       <Grid container sx={{ backgroundColor: "#917676", border: 1 }}>
@@ -72,27 +72,17 @@ const InfoLayout = React.forwardRef((props, ref) => {
         {/* Value input */}
         <Grid
           item
-          xs={5}
+          xs={12}
           sm={4}
           display="flex"
           alignItems="center"
           justifyContent="center"
         >
-          <Box>
-            <input
-              ref={ref}
-              name={props.name}
-              type="number"
-              variant="outlined"
-              size="small"
-              label="Amount"
-              sx={{ my: 1 }}
-            />
-          </Box>
+          <ItemXpQuantity name={props.name} experience={props.experience} />
         </Grid>
       </Grid>
     </>
   );
 });
 
-export default InfoLayout;
+export default ItemData;

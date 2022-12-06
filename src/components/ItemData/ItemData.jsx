@@ -9,7 +9,7 @@
 import React, { useContext } from "react";
 import ItemXpContext from "../../store/itemXp-context";
 
-import BoxFlex from "../../shared/BoxFlex";
+import BoxFlex from "../../uiHelper/BoxFlex";
 import ItemXpQuantity from "./ItemXpQuantity";
 
 import Box from "@mui/material/Box";

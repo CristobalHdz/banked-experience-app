@@ -1,3 +1,8 @@
+/**
+ * Input and submit button for ammount of items
+ *  @returns amount of items with their id
+ */
+
 import { useRef } from "react";
 
 import Input from "./Input";

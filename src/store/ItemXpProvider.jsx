@@ -1,3 +1,9 @@
+/**
+ * Redux functions storage
+ * @returns redux functions for adding item
+ * TODO: ADD PERCENTAGE, CLEAR ITEMS AND CLEAR PERCENTAGE
+ */
+
 import { useReducer } from "react";
 
 import ItemXpContext from "./itemXp-context";

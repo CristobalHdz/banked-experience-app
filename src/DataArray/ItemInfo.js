@@ -1,3 +1,7 @@
+/**
+ * Full list of all cooking items that require only ONE input
+ */
+
 const itemInfo = [
   {
     itemId: 1,

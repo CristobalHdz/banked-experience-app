@@ -1,3 +1,8 @@
+/**
+ * Input functionality
+ *  @returns a number with itemId
+ */
+
 import React from "react";
 import classes from "./Input.module.css";
 

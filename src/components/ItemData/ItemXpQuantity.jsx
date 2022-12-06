@@ -1,33 +1,28 @@
-// import React
 import { useRef } from "react";
 
-// Import components
 import Input from "./Input";
 
-// Import CSS
 import classes from "./ItemXpQuantity.module.css";
 
 const ItemXpQuantity = (props) => {
   const amountInputRef = useRef();
 
-  const handleSubmitQuantity = (event) => {
+  const submitHandler = (event) => {
     event.preventDefault();
 
     const itemQuantity = amountInputRef.current.value;
-    const itemExperience = props.experience;
+    const enteredItemAmount = +itemQuantity;
 
-    const totalExperience = (itemQuantity * itemExperience).toFixed(1);
-
-    console.log(totalExperience);
+    props.onAddToItemXp(enteredItemAmount);
   };
 
   return (
-    <form className={classes.form} onSubmit={handleSubmitQuantity}>
+    <form className={classes.form} onSubmit={submitHandler}>
       <Input
         ref={amountInputRef}
         label="Amount"
         input={{
-          id: props.name,
+          id: "amount_" + props.itemId,
           type: "number",
           min: "0",
           max: "2147483647",

@@ -4,12 +4,15 @@ import { Route, Routes, Navigate } from "react-router-dom";
 // Views imports
 import Mainview from "./views/Mainview";
 
+// Redux imports
+import ItemXpProvider from "./store/ItemXpProvider";
+
 // CSS imports
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
+    <ItemXpProvider className="App">
       <main>
         <Routes>
           <Route path="/" element={<Navigate replace to="/welcome" />} />
@@ -22,7 +25,7 @@ function App() {
           <Route path="/products/:productId" element={<ProductDetail />} /> */}
         </Routes>
       </main>
-    </div>
+    </ItemXpProvider>
   );
 }
 

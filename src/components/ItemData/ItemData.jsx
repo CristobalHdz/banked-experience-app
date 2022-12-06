@@ -6,22 +6,31 @@
 //TODO: FIX HOW THE INPUT LOOKS
 //TODO: FIX HOW THE TABLE LOOKS WHEN CHANGING FROM SM TO XS
 
-// React imports
-import React from "react";
+import React, { useContext } from "react";
+import ItemXpContext from "../../store/itemXp-context";
 
-// Components imports
 import BoxFlex from "../../shared/BoxFlex";
 import ItemXpQuantity from "./ItemXpQuantity";
 
-// MUI imports
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 
-// Icon imports
 import P2Picon from "../../assets/P2P_icon.png";
 import F2Picon from "../../assets/F2P_icon.png";
 
-const ItemData = React.forwardRef((props, ref) => {
+const ItemData = (props) => {
+  const itemCtx = useContext(ItemXpContext);
+
+  const addToItemHandler = (amount) => {
+    itemCtx.addItem({
+      itemId: props.itemId,
+      name: props.name,
+      amount: amount,
+      experience: props.experience,
+    });
+    console.log(itemCtx);
+  };
+
   return (
     <>
       <Grid container sx={{ backgroundColor: "#917676", border: 1 }}>
@@ -78,11 +87,11 @@ const ItemData = React.forwardRef((props, ref) => {
           alignItems="center"
           justifyContent="center"
         >
-          <ItemXpQuantity name={props.name} experience={props.experience} />
+          <ItemXpQuantity onAddToItemXp={addToItemHandler} />
         </Grid>
       </Grid>
     </>
   );
-});
+};
 
 export default ItemData;

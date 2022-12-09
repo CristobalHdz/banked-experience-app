@@ -1,3 +1,7 @@
+/**
+ * Table layout Ui
+ */
+
 import Box from "@mui/material/Box";
 
 const BoxFlex = (props) => {

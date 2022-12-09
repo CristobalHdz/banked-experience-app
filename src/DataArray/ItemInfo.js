@@ -1,6 +1,10 @@
+/**
+ * Full list of all cooking items that require only ONE input
+ */
+
 const itemInfo = [
   {
-    itemId: 1,
+    id: 1,
     name: "Raw karambwanji",
     level: 1,
     experience: 10.6,
@@ -8,7 +12,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_karambwanji.png?02510",
   },
   {
-    itemId: 2,
+    id: 2,
     name: "Raw shrimps",
     level: 1,
     experience: 31.8,
@@ -16,7 +20,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_shrimps.png?575eb",
   },
   {
-    itemId: 3,
+    id: 3,
     name: "Raw anchovies",
     level: 1,
     experience: 31.8,
@@ -24,7 +28,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_anchovies.png?4cd31",
   },
   {
-    itemId: 4,
+    id: 4,
     name: "Raw minnow",
     level: 1,
     experience: 31.8,
@@ -32,7 +36,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_minnow.png?0c1ff",
   },
   {
-    itemId: 5,
+    id: 5,
     name: "Raw crayfish",
     level: 1,
     experience: 31.8,
@@ -40,7 +44,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_crayfish.png?3c61f",
   },
   {
-    itemId: 6,
+    id: 6,
     name: "Raw sardine",
     level: 1,
     experience: 42.5,
@@ -48,7 +52,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_sardine.png?604e8",
   },
   {
-    itemId: 7,
+    id: 7,
     name: "Raw karambwan",
     level: 1,
     experience: 201.4,
@@ -56,7 +60,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_karambwan.png?eef09",
   },
   {
-    itemId: 8,
+    id: 8,
     name: "Raw herring",
     level: 5,
     experience: 53,
@@ -64,7 +68,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_herring.png?ee947",
   },
   {
-    itemId: 9,
+    id: 9,
     name: "Raw mackerel",
     level: 10,
     experience: 31.8,
@@ -72,7 +76,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_mackerel.png?38816",
   },
   {
-    itemId: 10,
+    id: 10,
     name: "Raw trout",
     level: 15,
     experience: 74.2,
@@ -80,7 +84,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_trout.png?4efd3",
   },
   {
-    itemId: 11,
+    id: 11,
     name: "Raw cod",
     level: 18,
     experience: 79.5,
@@ -88,7 +92,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_cod.png?95ab4",
   },
   {
-    itemId: 12,
+    id: 12,
     name: "Raw pike",
     level: 20,
     experience: 84.8,
@@ -96,7 +100,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_pike.png?a1ee3",
   },
   {
-    itemId: 13,
+    id: 13,
     name: "Raw salmon",
     level: 25,
     experience: 95.4,
@@ -104,7 +108,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_salmon.png?ab536",
   },
   {
-    itemId: 14,
+    id: 14,
     name: "Slimy eel",
     level: 28,
     experience: 100.7,
@@ -112,7 +116,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Slimy_eel.png?3e4b8",
   },
   {
-    itemId: 15,
+    id: 15,
     name: "Raw tuna",
     level: 30,
     experience: 106,
@@ -120,7 +124,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_lobster.png?57ddd",
   },
   {
-    itemId: 16,
+    id: 16,
     name: "Raw rainbow fish",
     level: 35,
     experience: 116.6,
@@ -128,7 +132,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_rainbow_fish.png?e0f27",
   },
   {
-    itemId: 17,
+    id: 17,
     name: "Raw cave eel",
     level: 38,
     experience: 121.9,
@@ -136,7 +140,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_cave_eel.png?77026",
   },
   {
-    itemId: 18,
+    id: 18,
     name: "Raw lobster",
     level: 40,
     experience: 172.2,
@@ -144,7 +148,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_lobster.png?57ddd",
   },
   {
-    itemId: 19,
+    id: 19,
     name: "Raw bass",
     level: 43,
     experience: 137.8,
@@ -152,7 +156,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_bass.png?04af1",
   },
   {
-    itemId: 20,
+    id: 20,
     name: "Raw swordfish",
     level: 45,
     experience: 148.4,
@@ -160,7 +164,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_swordfish.png?2bf97",
   },
   {
-    itemId: 21,
+    id: 21,
     name: "Raw desert sole",
     level: 52,
     experience: 151.1,
@@ -168,7 +172,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_desert_sole.png?e9b22",
   },
   {
-    itemId: 22,
+    id: 22,
     name: "Raw lava eel",
     level: 53,
     experience: 31.8,
@@ -176,7 +180,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_lava_eel.png?4f671",
   },
   {
-    itemId: 23,
+    id: 23,
     name: "Raw catfish",
     level: 60,
     experience: 153.7,
@@ -184,7 +188,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_catfish.png?a5482",
   },
   {
-    itemId: 24,
+    id: 24,
     name: "Raw monkfish",
     level: 64,
     experience: 159,
@@ -192,7 +196,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_monkfish.png?ef04c",
   },
   {
-    itemId: 25,
+    id: 25,
     name: "Raw beltfish",
     level: 72,
     experience: 174.9,
@@ -200,7 +204,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_beltfish.png?f0df9",
   },
   {
-    itemId: 26,
+    id: 26,
     name: "Raw blubber jellyfish",
     level: 72,
     experience: 174.9,
@@ -209,7 +213,7 @@ const itemInfo = [
       "https://runescape.wiki/images/Raw_green_blubber_jellyfish.png?1ee03",
   },
   {
-    itemId: 27,
+    id: 27,
     name: "Raw shark",
     level: 80,
     experience: 222.6,
@@ -217,7 +221,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_sea_turtle.png?cacbf",
   },
   {
-    itemId: 28,
+    id: 28,
     name: "Raw sea turtle",
     level: 82,
     experience: 224,
@@ -225,7 +229,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_sea_turtle.png?cacbf",
   },
   {
-    itemId: 29,
+    id: 29,
     name: "Raw geat white shark",
     level: 84,
     experience: 224.7,
@@ -233,7 +237,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_great_white_shark.png?7ac63",
   },
   {
-    itemId: 30,
+    id: 30,
     name: "Fish oil from raw tarpon",
     level: 91,
     experience: 127.2,
@@ -241,7 +245,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_tarpon.png?3e309",
   },
   {
-    itemId: 32,
+    id: 32,
     name: "Fish oil from raw sillago",
     level: 91,
     experience: 127.2,
@@ -249,7 +253,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_sillago.png?06638",
   },
   {
-    itemId: 33,
+    id: 33,
     name: "Fish oil from raw seerfish",
     level: 91,
     experience: 127.2,
@@ -257,7 +261,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_seerfish.png?a0331",
   },
   {
-    itemId: 34,
+    id: 34,
     name: "Raw manta ray",
     level: 91,
     experience: 229.3,
@@ -265,7 +269,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_manta_ray.png?969c4",
   },
   {
-    itemId: 35,
+    id: 35,
     name: "Raw rocktail",
     level: 93,
     experience: 238.5,
@@ -273,7 +277,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_rocktail.png?f05cc",
   },
   {
-    itemId: 36,
+    id: 36,
     name: "Raw tiger shark",
     level: 95,
     experience: 243.8,
@@ -281,7 +285,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_tiger_shark.png?b887b",
   },
   {
-    itemId: 37,
+    id: 37,
     name: "Raw blubber jellyfish",
     level: 95,
     experience: 249.1,
@@ -290,7 +294,7 @@ const itemInfo = [
       "https://runescape.wiki/images/Raw_blue_blubber_jellyfish.png?83f73",
   },
   {
-    itemId: 38,
+    id: 38,
     name: "Raw wobbegong",
     level: 96,
     experience: 254.4,
@@ -298,7 +302,7 @@ const itemInfo = [
     imageUrl: "https://runescape.wiki/images/Raw_wobbegong.png?e1d81",
   },
   {
-    itemId: 39,
+    id: 39,
     name: "Raw sailfish",
     level: 99,
     experience: 286.2,

@@ -3,23 +3,33 @@
  * @returns row layout
  */
 
-// Components imports
-
 //TODO: FIX HOW THE INPUT LOOKS
 //TODO: FIX HOW THE TABLE LOOKS WHEN CHANGING FROM SM TO XS
 
-import BoxFlex from "../shared/BoxFlex";
+import React, { useContext } from "react";
+import ItemXpContext from "../../store/itemXp-context";
 
-// MUI imports
+import BoxFlex from "../../uiHelper/BoxFlex";
+import ItemXpQuantity from "./ItemXpQuantity";
+
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import TextField from "@mui/material/TextField";
 
-// Icon imports
-import P2Picon from "../assets/P2P_icon.png";
-import F2Picon from "../assets/F2P_icon.png";
+import P2Picon from "../../assets/P2P_icon.png";
+import F2Picon from "../../assets/F2P_icon.png";
 
-const InfoLayout = (props) => {
+const ItemData = (props) => {
+  const itemCtx = useContext(ItemXpContext);
+
+  const addToItemHandler = (amount) => {
+    itemCtx.addItem({
+      id: props.id,
+      name: props.name,
+      amount: amount,
+      experience: props.experience,
+    });
+  };
+
   return (
     <>
       <Grid container sx={{ backgroundColor: "#917676", border: 1 }}>
@@ -70,25 +80,17 @@ const InfoLayout = (props) => {
         {/* Value input */}
         <Grid
           item
-          xs={5}
+          xs={12}
           sm={4}
           display="flex"
           alignItems="center"
           justifyContent="center"
         >
-          <Box>
-            <TextField
-              type="number"
-              variant="outlined"
-              size="small"
-              label="Amount"
-              sx={{ my: 1 }}
-            />
-          </Box>
+          <ItemXpQuantity onAddToItemXp={addToItemHandler} />
         </Grid>
       </Grid>
     </>
   );
 };
 
-export default InfoLayout;
+export default ItemData;

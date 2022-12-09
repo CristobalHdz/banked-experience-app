@@ -1,6 +1,6 @@
 /**
  * Input functionality
- *  @returns a number with itemId
+ *  @returns a number with id
  */
 
 import React from "react";

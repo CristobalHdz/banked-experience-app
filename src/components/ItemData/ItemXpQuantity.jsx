@@ -16,9 +16,9 @@ const ItemXpQuantity = (props) => {
     event.preventDefault();
 
     const itemQuantity = amountInputRef.current.value;
-    const enteredItemAmount = +itemQuantity;
+    console.log(itemQuantity);
 
-    props.onAddToItemXp(enteredItemAmount);
+    props.onAddToItemXp(itemQuantity);
   };
 
   return (
@@ -27,12 +27,12 @@ const ItemXpQuantity = (props) => {
         ref={amountInputRef}
         label="Amount"
         input={{
-          id: "amount_" + props.itemId,
+          id: "amount_" + props.id,
           type: "number",
           min: "0",
           max: "2147483647",
           step: "1",
-          defaultValue: "",
+          defaultValue: "1",
         }}
       />
       <button>Add</button>

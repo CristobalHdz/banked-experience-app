@@ -1,13 +1,9 @@
-// React imports
 import React from "react";
 
-// Components imports
 import ItemData from "../components/ItemData/ItemData";
 
-// MUI imports
 import Grid from "@mui/material/Grid";
 
-// Item info
 import itemInfo from "../DataArray/ItemInfo.js";
 
 // const DUMMY_PLAYER = {
@@ -19,9 +15,9 @@ import itemInfo from "../DataArray/ItemInfo.js";
 const Mainview = () => {
   const itemList = itemInfo.map((data) => {
     return (
-      <Grid item xs={12} sm={10} md={7} key={data.itemId} marginBottom={1}>
+      <Grid item xs={12} sm={10} md={7} key={data.id} marginBottom={1}>
         <ItemData
-          itemId={data.itemId}
+          id={data.id}
           name={data.name}
           member={data.member}
           imageUrl={data.imageUrl}

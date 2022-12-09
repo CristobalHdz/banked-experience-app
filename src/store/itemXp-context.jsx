@@ -6,7 +6,7 @@
 import React from "react";
 
 const ItemXpContext = React.createContext({
-  item: [],
+  items: [],
   totalItemXp: 0,
   addItem: (item) => {},
   //   totalPercentageModifier: 0,

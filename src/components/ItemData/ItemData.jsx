@@ -23,7 +23,7 @@ const ItemData = (props) => {
 
   const addToItemHandler = (amount) => {
     itemCtx.addItem({
-      itemId: props.itemId,
+      id: props.id,
       name: props.name,
       amount: amount,
       experience: props.experience,

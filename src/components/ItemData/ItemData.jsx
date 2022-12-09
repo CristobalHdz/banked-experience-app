@@ -28,7 +28,6 @@ const ItemData = (props) => {
       amount: amount,
       experience: props.experience,
     });
-    console.log(itemCtx);
   };
 
   return (

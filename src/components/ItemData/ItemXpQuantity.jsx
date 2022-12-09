@@ -31,7 +31,7 @@ const ItemXpQuantity = (props) => {
           min: "0",
           max: "2147483647",
           step: "1",
-          defaultValue: "1",
+          defaultValue: "",
         }}
       />
       <button>Add</button>

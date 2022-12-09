@@ -41,8 +41,8 @@ const ItemXpReducer = (state, action) => {
      * Item exists and action value is 0
      * @returns array with removed item and variable with new totalXp value
      */
-    if (existingItem && action.item.amount === 0) {
-      updatedItems = state.items.filter((item) => item.id !== action.id);
+    if (existingItem && action.item.amount == 0) {
+      updatedItems = state.items.filter((item) => item.id !== action.item.id);
     }
 
     /**

@@ -16,7 +16,6 @@ const ItemXpQuantity = (props) => {
     event.preventDefault();
 
     const itemQuantity = amountInputRef.current.value;
-    console.log(itemQuantity);
 
     props.onAddToItemXp(itemQuantity);
   };

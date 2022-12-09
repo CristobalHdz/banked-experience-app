@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import ItemData from "../components/ItemData/ItemData";
 
 import Grid from "@mui/material/Grid";
 
 import itemInfo from "../DataArray/ItemInfo.js";
+import itemContext from "../store/itemXp-context";
 
 // const DUMMY_PLAYER = {
 //   rsName: "lalala",
@@ -13,6 +14,9 @@ import itemInfo from "../DataArray/ItemInfo.js";
 // };
 
 const Mainview = () => {
+  const itemCtx = useContext(itemContext);
+  const { totalItemXp } = itemCtx;
+
   const itemList = itemInfo.map((data) => {
     return (
       <Grid item xs={12} sm={10} md={7} key={data.id} marginBottom={1}>
@@ -32,6 +36,9 @@ const Mainview = () => {
   return (
     <>
       <h1>The Mainview Page</h1>
+      <Grid item xs={12}>
+        <h1>{Math.floor(totalItemXp).toLocaleString()}</h1>
+      </Grid>
       <Grid container justifyContent="center">
         {itemList}
       </Grid>

@@ -30,7 +30,6 @@ const ItemXpQuantity = (props) => {
           type: "number",
           min: "0",
           max: "2147483647",
-          step: "1",
           defaultValue: "",
         }}
       />

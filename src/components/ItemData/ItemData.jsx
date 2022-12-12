@@ -3,9 +3,6 @@
  * @returns row layout
  */
 
-//TODO: FIX HOW THE INPUT LOOKS
-//TODO: FIX HOW THE TABLE LOOKS WHEN CHANGING FROM SM TO XS
-
 import React, { useContext } from "react";
 import ItemXpContext from "../../store/itemXp-context";
 
@@ -37,7 +34,7 @@ const ItemData = (props) => {
         <Grid
           item
           xs={12}
-          sm={1}
+          md={1}
           display="flex"
           alignItems="center"
           justifyContent="center"
@@ -48,8 +45,8 @@ const ItemData = (props) => {
         </Grid>
 
         {/* Item image and name */}
-        <Grid item xs={12} sm={3}>
-          <BoxFlex>
+        <Grid item xs={12} md={2}>
+          <BoxFlex justifyItems="start">
             <Box sx={{ marginRight: 1 }}>
               <img src={props.imageUrl} alt={props.name} />
             </Box>
@@ -60,7 +57,7 @@ const ItemData = (props) => {
         </Grid>
 
         {/* Level */}
-        <Grid item xs={6} sm={2}>
+        <Grid item xs={6} md={2}>
           <BoxFlex borderStyle={0.5}>
             <p>
               level: <b>{props.level}</b>
@@ -69,7 +66,7 @@ const ItemData = (props) => {
         </Grid>
 
         {/* Experience per item */}
-        <Grid item xs={6} sm={2}>
+        <Grid item xs={6} md={2}>
           <BoxFlex borderStyle={0.5}>
             <p>
               XP: <b>{props.experience}</b>
@@ -81,7 +78,8 @@ const ItemData = (props) => {
         <Grid
           item
           xs={12}
-          sm={4}
+          md={5}
+          lg={5}
           display="flex"
           alignItems="center"
           justifyContent="center"

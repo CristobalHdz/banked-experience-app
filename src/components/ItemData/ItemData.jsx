@@ -6,7 +6,6 @@
 import React, { useContext } from "react";
 import ItemXpContext from "../../store/itemXp-context";
 
-import BoxFlex from "../../uiHelper/BoxFlex";
 import ItemXpQuantity from "./ItemXpQuantity";
 
 import Box from "@mui/material/Box";
@@ -38,51 +37,79 @@ const ItemData = (props) => {
           display="flex"
           alignItems="center"
           justifyContent="center"
+          sx={{ borderBottom: { xs: 0.5, md: 0 }, marginTop: { xs: 1, md: 0 } }}
         >
           <Box>
             <img src={props.member ? P2Picon : F2Picon} alt="P2P icon" />
           </Box>
         </Grid>
 
-        {/* Item image and name */}
-        <Grid item xs={12} md={2}>
-          <BoxFlex justifyItems="start">
-            <Box sx={{ marginRight: 1 }}>
-              <img src={props.imageUrl} alt={props.name} />
-            </Box>
-            <p>
-              <b>{props.name}</b>
-            </p>
-          </BoxFlex>
+        {/* Item image */}
+        <Grid
+          item
+          xs={12}
+          md={1}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          sx={{ marginTop: { xs: 1, md: 0 } }}
+        >
+          <Box>
+            <img src={props.imageUrl} alt={props.name} />
+          </Box>
+        </Grid>
+
+        {/* Item name */}
+        <Grid
+          item
+          xs={12}
+          md={2}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          sx={{ borderBottom: { xs: 0.5, md: 0 } }}
+        >
+          <b>{props.name}</b>
         </Grid>
 
         {/* Level */}
-        <Grid item xs={6} md={2}>
-          <BoxFlex borderStyle={0.5}>
-            <p>
-              level: <b>{props.level}</b>
-            </p>
-          </BoxFlex>
+        <Grid
+          item
+          xs={6}
+          md={2}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          sx={{ borderRight: { xs: 0.5, md: 0 } }}
+        >
+          <p>
+            level: <b>{props.level}</b>
+          </p>
         </Grid>
 
         {/* Experience per item */}
-        <Grid item xs={6} md={2}>
-          <BoxFlex borderStyle={0.5}>
-            <p>
-              XP: <b>{props.experience}</b>
-            </p>
-          </BoxFlex>
+        <Grid
+          item
+          xs={6}
+          md={2}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <p>
+            XP: <b>{props.experience}</b>
+          </p>
         </Grid>
 
         {/* Value input */}
         <Grid
           item
           xs={12}
-          md={5}
-          lg={5}
+          md={4}
           display="flex"
           alignItems="center"
           justifyContent="center"
+          sx={{ borderTop: { xs: 0.5, md: 0 } }}
         >
           <ItemXpQuantity onAddToItemXp={addToItemHandler} />
         </Grid>

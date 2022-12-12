@@ -10,10 +10,10 @@ const BoxFlex = (props) => {
       display="flex"
       alignItems="center"
       sx={{
-        justifyContent: { xs: "center", sm: "start" },
-        borderTop: { xs: 0.5, sm: 0 },
-        borderLeft: { xs: 0.5, sm: 0 },
-        borderBottom: { xs: props.borderStyle, sm: 0 },
+        justifyContent: { xs: "center", md: props.justifyItems },
+        borderTop: { xs: 0.5, md: 0 },
+        borderLeft: { xs: 0.5, md: 0 },
+        borderBottom: { xs: props.borderStyle, md: 0 },
       }}
     >
       {props.children}

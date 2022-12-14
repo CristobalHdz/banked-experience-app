@@ -2,16 +2,16 @@ import TableLayout from "../UiHelpers/TableLayout";
 import ItemData from "./ItemData";
 import itemInfo from "../../DataArray/ItemInfo";
 
-const sortItemArray = (filterValue, itemArray) => {
+const sortItemArray = (sortValue, itemArray) => {
   return itemArray.sort((a, b) => {
-    if (filterValue < 2) {
-      if (filterValue == 0) {
+    if (sortValue < 2) {
+      if (sortValue == 0) {
         return a.level - b.level;
       } else {
         return b.level - a.level;
       }
     } else {
-      if (filterValue == 2) {
+      if (sortValue == 2) {
         return b.member - a.member;
       } else {
         return a.member - b.member;
@@ -20,14 +20,23 @@ const sortItemArray = (filterValue, itemArray) => {
   });
 };
 
+const filterItemArray = (filterValue, itemArray) => {
+  return filterValue
+    ? itemArray.filter((data) => data.name.toLowerCase().includes(filterValue.toLowerCase()))
+    : itemArray;
+};
+
 const ItemListContainer = (props) => {
   const copyArray = [...itemInfo];
 
-  const sortedItem = sortItemArray(props.filterValue, copyArray);
+  const filterData = filterItemArray(
+    props.filterValue,
+    sortItemArray(props.sortValue, copyArray)
+  );
 
   return (
     <>
-      {sortedItem.map((data) => {
+      {filterData.map((data) => {
         return (
           <TableLayout key={data.id}>
             <ItemData

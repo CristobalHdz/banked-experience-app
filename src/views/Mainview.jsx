@@ -7,12 +7,17 @@ import ItemXpMutationsContainer from "../components/ItemXpMutations/ItemXpMutati
 import ItemListContainer from "../components/ItemData/ItemListContainer.jsx";
 
 const Mainview = () => {
-  const [filterValue, setFilterValue] = useState(0);
+  const [sortValue, setSortValue] = useState(0);
+  const [filterValue, setFilterValue] = useState("");
   const itemCtx = useContext(itemContext);
   const { totalItemXp } = itemCtx;
 
-  const filterHandler = (filter) => {
-    setFilterValue(filter);
+  const sortHandler = (value) => {
+    setSortValue(value);
+  };
+
+  const filterHandler = (value) => {
+    setFilterValue(value);
   };
 
   return (
@@ -21,11 +26,14 @@ const Mainview = () => {
       <Grid item xs={12}>
         <h1>{Math.floor(totalItemXp).toLocaleString()}</h1>
       </Grid>
-      <Grid item xs={12} md={9}>
-        <ItemXpMutationsContainer filterHandler={filterHandler} />
+      <Grid item xs={12} md={6}>
+        <ItemXpMutationsContainer
+          sortHandler={sortHandler}
+          filterHandler={filterHandler}
+        />
       </Grid>
       <Grid container justifyContent="center">
-        <ItemListContainer filterValue={filterValue} />
+        <ItemListContainer filterValue={filterValue} sortValue={sortValue} />
       </Grid>
     </Grid>
   );

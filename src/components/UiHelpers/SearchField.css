@@ -1,20 +1,24 @@
-.select {
+.searchField {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 0.5rem;
 }
 
-.select label {
+.searchField label {
   font-weight: bold;
   margin-right: 1rem;
 }
 
-.select select {
+.searchField input {
   width: 15rem;
-  height: 2rem;
   border-radius: 5px;
   border: 1px solid #ccc;
   font: inherit;
-  padding-left: 0.5rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

@@ -21,7 +21,7 @@ const Mainview = () => {
       <Grid item xs={12}>
         <h1>{Math.floor(totalItemXp).toLocaleString()}</h1>
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={12} md={9}>
         <ItemXpMutationsContainer filterHandler={filterHandler} />
       </Grid>
       <Grid container justifyContent="center">

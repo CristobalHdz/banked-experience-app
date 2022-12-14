@@ -1,5 +1,7 @@
 import { useState } from "react";
+import Grid from "@mui/material/Grid";
 import DropdownSort from "./DropdownSort";
+import ItemSearch from "./ItemSearch";
 
 const ItemXpMutationsContainer = (props) => {
   const [filter, setFilter] = useState(0);
@@ -10,11 +12,18 @@ const ItemXpMutationsContainer = (props) => {
   };
 
   return (
-    <DropdownSort
-      selectValueChange={handleChange}
-      value={filter}
-      label="Sort by"
-    />
+    <Grid container>
+      <Grid item xs={12} md={6}>
+        <DropdownSort
+          selectValueChange={handleChange}
+          value={filter}
+          label="Sort by"
+        />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <ItemSearch />
+      </Grid>
+    </Grid>
   );
 };
 

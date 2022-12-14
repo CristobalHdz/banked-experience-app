@@ -1,45 +1,41 @@
-import React, { useContext } from "react";
-
-import ItemData from "../components/ItemData/ItemData";
+import React, { useContext, useState } from "react";
 
 import Grid from "@mui/material/Grid";
 
-import itemInfo from "../DataArray/ItemInfo.js";
 import itemContext from "../store/itemXp-context";
+import ItemXpMutationsContainer from "../components/ItemXpMutations/ItemXpMutationsContainer";
+import ItemListContainer from "../components/ItemData/ItemListContainer.jsx";
 
 const Mainview = () => {
+  const [sortValue, setSortValue] = useState(0);
+  const [filterValue, setFilterValue] = useState("");
   const itemCtx = useContext(itemContext);
   const { totalItemXp } = itemCtx;
 
-  const itemList = itemInfo.map((data) => {
-    return (
-      <React.Fragment key={data.id}>
-        <Grid item xs="auto" xl={3}></Grid>
-        <Grid item xs={12} md={10} xl={6} marginBottom={1}>
-          <ItemData
-            id={data.id}
-            name={data.name}
-            member={data.member}
-            imageUrl={data.imageUrl}
-            level={data.level}
-            experience={data.experience}
-          />
-        </Grid>
-        <Grid item xs="auto" xl={3}></Grid>
-      </React.Fragment>
-    );
-  });
+  const sortHandler = (value) => {
+    setSortValue(value);
+  };
+
+  const filterHandler = (value) => {
+    setFilterValue(value);
+  };
 
   return (
-    <>
+    <Grid container justifyContent="center">
       <h1>The Mainview Page</h1>
       <Grid item xs={12}>
         <h1>{Math.floor(totalItemXp).toLocaleString()}</h1>
       </Grid>
-      <Grid container justifyContent="center">
-        {itemList}
+      <Grid item xs={12} md={6}>
+        <ItemXpMutationsContainer
+          sortHandler={sortHandler}
+          filterHandler={filterHandler}
+        />
       </Grid>
-    </>
+      <Grid container justifyContent="center">
+        <ItemListContainer filterValue={filterValue} sortValue={sortValue} />
+      </Grid>
+    </Grid>
   );
 };
 

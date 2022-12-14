@@ -13,6 +13,7 @@ import Grid from "@mui/material/Grid";
 
 import P2Picon from "../../assets/P2P_icon.png";
 import F2Picon from "../../assets/F2P_icon.png";
+import TableLayoutItem from "../UiHelpers/TableLayoutItem";
 
 const ItemData = (props) => {
   const itemCtx = useContext(ItemXpContext);
@@ -30,89 +31,61 @@ const ItemData = (props) => {
     <>
       <Grid container sx={{ backgroundColor: "#917676", border: 1 }}>
         {/* Member's icon */}
-        <Grid
-          item
-          xs={12}
-          md={1}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          sx={{ borderBottom: { xs: 0.5, md: 0 }, marginTop: { xs: 1, md: 0 } }}
+        <TableLayoutItem
+          xsBp={12}
+          mdBp={1}
+          tableStyle={{
+            borderBottom: { xs: 0.5, md: 0 },
+            marginTop: { xs: 1, md: 0 },
+          }}
         >
-          <Box>
-            <img src={props.member ? P2Picon : F2Picon} alt="P2P icon" />
-          </Box>
-        </Grid>
+          <img src={props.member ? P2Picon : F2Picon} alt="P2P icon" />
+        </TableLayoutItem>
 
         {/* Item image */}
-        <Grid
-          item
-          xs={12}
-          md={1}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          sx={{ marginTop: { xs: 1, md: 0 } }}
+        <TableLayoutItem
+          xsBp={12}
+          mdBp={1}
+          tableStyle={{ marginTop: { xs: 1, md: 0 } }}
         >
-          <Box>
-            <img src={props.imageUrl} alt={props.name} />
-          </Box>
-        </Grid>
+          <img src={props.imageUrl} alt={props.name} />
+        </TableLayoutItem>
 
         {/* Item name */}
-        <Grid
-          item
-          xs={12}
-          md={2}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          sx={{ borderBottom: { xs: 0.5, md: 0 } }}
+        <TableLayoutItem
+          xsBp={12}
+          mdBp={2}
+          tableStyle={{ borderBottom: { xs: 0.5, md: 0 } }}
         >
           <b>{props.name}</b>
-        </Grid>
+        </TableLayoutItem>
 
         {/* Level */}
-        <Grid
-          item
-          xs={6}
-          md={2}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          sx={{ borderRight: { xs: 0.5, md: 0 } }}
+        <TableLayoutItem
+          xsBp={6}
+          mdBp={2}
+          tableStyle={{ borderRight: { xs: 0.5, md: 0 } }}
         >
           <p>
             level: <b>{props.level}</b>
           </p>
-        </Grid>
+        </TableLayoutItem>
 
         {/* Experience per item */}
-        <Grid
-          item
-          xs={6}
-          md={2}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
+        <TableLayoutItem xsBp={6} mdBp={2}>
           <p>
-            XP: <b>{props.experience}</b>
+            XP <b>{props.experience}</b>
           </p>
-        </Grid>
+        </TableLayoutItem>
 
         {/* Value input */}
-        <Grid
-          item
-          xs={12}
-          md={4}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          sx={{ borderTop: { xs: 0.5, md: 0 } }}
+        <TableLayoutItem
+          xsBp={12}
+          mdBp={4}
+          tableStyle={{ borderTop: { xs: 0.5, md: 0 } }}
         >
           <ItemXpQuantity onAddToItemXp={addToItemHandler} />
-        </Grid>
+        </TableLayoutItem>
       </Grid>
     </>
   );

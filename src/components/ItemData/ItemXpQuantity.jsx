@@ -5,7 +5,7 @@
 
 import { useRef } from "react";
 
-import Input from "./Input";
+import Input from "../UiHelpers/Input";
 
 import classes from "./ItemXpQuantity.module.css";
 

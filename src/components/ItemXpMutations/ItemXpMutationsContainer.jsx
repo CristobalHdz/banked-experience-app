@@ -1,6 +1,7 @@
 import Grid from "@mui/material/Grid";
-import DropdownSort from "../UiHelpers/Dropdown";
+import Dropdown from "../UiHelpers/Dropdown";
 import ItemSearch from "./ItemSearch";
+import ItemXpModifier from "./ItemXpModifier";
 
 const ItemXpMutationsContainer = (props) => {
   const sortHandler = (selectValue) => {
@@ -21,15 +22,19 @@ const ItemXpMutationsContainer = (props) => {
   return (
     <Grid container direction="column" marginBottom="20px">
       <Grid item xs={12} md={6}>
-        <DropdownSort
+        <Dropdown
           dropDownData={dropDownData}
           selectValueChange={sortHandler}
           value={props.sortValue}
           label="Sort by"
         />
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={6} marginBottom='1rem'>
         <ItemSearch onFilterText={searchHandler} />
+      </Grid>
+      <Grid item xs={12}>
+        <h2>Item xp modifier</h2>
+        <ItemXpModifier />
       </Grid>
     </Grid>
   );

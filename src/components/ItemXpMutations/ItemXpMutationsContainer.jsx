@@ -1,8 +1,18 @@
+import React, { useContext } from "react";
+
 import Grid from "@mui/material/Grid";
-import DropdownSort from "./DropdownSort";
+import Dropdown from "../UiHelpers/Dropdown";
 import ItemSearch from "./ItemSearch";
+import ItemXpModifiers from "./ItemXpModifiers";
+import ItemXpContext from "../../store/itemXp-context";
 
 const ItemXpMutationsContainer = (props) => {
+  const xpModCtx = useContext(ItemXpContext);
+
+  const addToXpModHandler = (obj) => {
+    console.log(xpModCtx);
+    xpModCtx.addXpMod(obj);
+  };
 
   const sortHandler = (selectValue) => {
     props.sortHandler(selectValue);
@@ -12,17 +22,29 @@ const ItemXpMutationsContainer = (props) => {
     props.filterHandler(selectValue);
   };
 
+  const dropDownData = [
+    { name: "Level (Lowest to Highest)", value: 0 },
+    { name: "Level (Highest to Lowest)", value: 1 },
+    { name: "Member", value: 2 },
+    { name: "Non-Member", value: 3 },
+  ];
+
   return (
     <Grid container direction="column" marginBottom="20px">
       <Grid item xs={12} md={6}>
-        <DropdownSort
+        <Dropdown
+          dropDownData={dropDownData}
           selectValueChange={sortHandler}
           value={props.sortValue}
           label="Sort by"
         />
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={6} marginBottom="1rem">
         <ItemSearch onFilterText={searchHandler} />
+      </Grid>
+      <Grid item xs={12}>
+        <h2>Item xp modifier</h2>
+        <ItemXpModifiers onAddToXpMod={addToXpModHandler} />
       </Grid>
     </Grid>
   );

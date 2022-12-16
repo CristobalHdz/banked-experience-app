@@ -10,7 +10,7 @@ const Mainview = () => {
   const [sortValue, setSortValue] = useState(0);
   const [filterValue, setFilterValue] = useState("");
   const itemCtx = useContext(itemContext);
-  const { totalItemXp } = itemCtx;
+  const { totalItemXp, bonusXpMod } = itemCtx;
 
   const sortHandler = (value) => {
     setSortValue(value);
@@ -24,14 +24,22 @@ const Mainview = () => {
     <Grid container justifyContent="center">
       <h1>The Mainview Page</h1>
       <Grid item xs={12}>
+        {<h1>Experience without modifier: </h1>}
         <h1>{Math.floor(totalItemXp).toLocaleString()}</h1>
+        {!bonusXpMod == 0 && (
+          <div>
+            <h2>Experience with bonus: </h2>
+            <h2>{Math.floor(bonusXpMod)}</h2>
+          </div>
+        )}
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} sm={12} md={10}>
         <ItemXpMutationsContainer
           sortHandler={sortHandler}
           filterHandler={filterHandler}
         />
       </Grid>
+
       <Grid container justifyContent="center">
         <ItemListContainer filterValue={filterValue} sortValue={sortValue} />
       </Grid>

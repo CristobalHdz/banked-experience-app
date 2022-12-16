@@ -11,7 +11,14 @@ import ItemXpContext from "./itemXp-context";
 const defaultItemState = {
   items: [],
   totalItemXp: 0,
-  //   totalPercentageModifier: 0,
+  bonusXpItems: {
+    dwarvenAxe: 0,
+    avatarBonus: 0,
+    outfitBonus: 0,
+    customBonus: 0,
+    method: 0,
+  },
+  bonusXpMod: 0,
 };
 
 const ItemXpReducer = (state, action) => {
@@ -69,6 +76,37 @@ const ItemXpReducer = (state, action) => {
     };
   }
 
+  if (action.type === "XP_MODIFIER") {
+    const existingTotalXp = state.totalItemXp;
+    const existingXpModItems = { ...state.bonusXpMod };
+    let updatedXpModItems = { ...action.item };
+    let updatedTotalXp = state.totalItemXp;
+
+    if (existingXpModItems != updatedXpModItems) {
+      let accXpMod =
+        1 +
+        (action.item.avatarBonus +
+          action.item.method +
+          action.item.outfitBonus) /
+          100;
+
+      const bonusXp =
+        existingTotalXp > action.item.customBonus
+          ? action.item.customBonus
+          : existingTotalXp;
+
+      updatedTotalXp =
+        (existingTotalXp + action.item.dwarvenAxe) * accXpMod + bonusXp;
+    }
+
+    return {
+      items: state.items,
+      totalItemXp: state.totalItemXp,
+      bonusXpMod: updatedTotalXp,
+      bonusXpItems: updatedXpModItems,
+    };
+  }
+
   //   if (action.type === "CLEAR_XP") {
   //   }
 
@@ -86,10 +124,17 @@ const ItemXpProvider = (props) => {
     dispatchItemAction({ type: "BANKED_XP", item: item });
   };
 
+  const addBonusXpHandler = (item) => {
+    dispatchItemAction({ type: "XP_MODIFIER", item: item });
+  };
+
   const itemContext = {
     items: itemXpState.items,
     totalItemXp: itemXpState.totalItemXp,
     addItem: addItemXpToTotalHandler,
+    bonusXpMod: itemXpState.bonusXpMod,
+    bonusXpItems: itemXpState.bonusXpItems,
+    addXpMod: addBonusXpHandler,
   };
 
   return (

@@ -6,14 +6,19 @@
 import React from "react";
 import classes from "./Input.module.css";
 import "./SearchField.css";
+import "./CheckBox.css";
 
 const Input = React.forwardRef((props, ref) => {
-  const theme = !props.searchFilter ? classes.input : 'searchField';
+  const theme = props.searchFilter
+    ? "searchField"
+    : props.checkBox
+    ? "checkBox"
+    : classes.input;
 
   return (
     <div className={theme}>
       <label htmlFor={props.input.id}>{props.label}</label>
-      <input ref={ref} {...props.input} />
+      <input id={props.id} ref={ref} {...props.input} />
     </div>
   );
 });

@@ -8,7 +8,6 @@ import ItemXpContext from "../../store/itemXp-context";
 
 import ItemXpQuantity from "./ItemXpQuantity";
 
-import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 
 import P2Picon from "../../assets/P2P_icon.png";

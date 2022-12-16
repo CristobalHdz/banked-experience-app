@@ -1,0 +1,25 @@
+.checkBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.checkBox label {
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.checkBox input {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font: inherit;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

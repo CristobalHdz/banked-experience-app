@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 import Grid from "@mui/material/Grid";
-import Dropdown from "../UiHelpers/Dropdown";
+import DropdownSort from "../UiHelpers/DropdownSort";
 import ItemSearch from "./ItemSearch";
 import ItemXpModifiers from "./ItemXpModifiers";
 import ItemXpContext from "../../store/itemXp-context";
@@ -10,7 +10,6 @@ const ItemXpMutationsContainer = (props) => {
   const xpModCtx = useContext(ItemXpContext);
 
   const addToXpModHandler = (obj) => {
-    console.log(xpModCtx);
     xpModCtx.addXpMod(obj);
   };
 
@@ -32,7 +31,7 @@ const ItemXpMutationsContainer = (props) => {
   return (
     <Grid container direction="column" marginBottom="20px">
       <Grid item xs={12} md={6}>
-        <Dropdown
+        <DropdownSort
           dropDownData={dropDownData}
           selectValueChange={sortHandler}
           value={props.sortValue}

@@ -30,6 +30,29 @@ const ItemXpReducer = (state, action) => {
 
     const existingItem = state.items[existingItemIndex];
     let updatedItems;
+    let storageArray = [];
+
+    if (localStorage.getItem("ItemObjArray") === null) {
+      localStorage.setItem("ItemObjArray", JSON.stringify(storageArray));
+    }
+
+    /**
+     * Item DOESN'T exist and action value is more than 0
+     * @returns array with new object and variable with new totalXp value
+     */
+    if (!existingItem) {
+      updatedItems = state.items.concat(action.item);
+
+      // SET ITEM IN LOCAL STORAGE
+      let newItem = {
+        id: action.item.id,
+        name: action.item.name,
+        amount: parseInt(action.item.amount),
+      };
+      storageArray = JSON.parse(localStorage.getItem("ItemObjArray")) || [];
+      storageArray.push(newItem);
+      localStorage.setItem("ItemObjArray", JSON.stringify(storageArray));
+    }
 
     /**
      * Item exists and action value is more than 0
@@ -42,6 +65,20 @@ const ItemXpReducer = (state, action) => {
       };
       updatedItems = [...state.items];
       updatedItems[existingItemIndex] = updatedItem;
+
+      // CHANGE ITEM IN LOCAL STORAGE
+      storageArray = JSON.parse(localStorage.getItem("ItemObjArray")) || [];
+      const index = storageArray.findIndex((item) => {
+        return item.id == action.item.id;
+      });
+      const updatedStorage = [
+        ...storageArray.slice(0, index),
+        Object.assign({}, storageArray[index], {
+          amount: parseInt(action.item.amount),
+        }),
+        ...storageArray.slice(index + 1),
+      ];
+      localStorage.setItem("ItemObjArray", JSON.stringify(updatedStorage));
     }
 
     /**
@@ -50,17 +87,15 @@ const ItemXpReducer = (state, action) => {
      */
     if (existingItem && action.item.amount == 0) {
       updatedItems = state.items.filter((item) => item.id !== action.item.id);
+
+      // REMOVE ITEM FROM LOCAL STORAGE
+      storageArray = JSON.parse(localStorage.getItem("ItemObjArray")) || [];
+      const updatedStorage = storageArray.filter(
+        (item) => item.id !== action.item.id
+      );
+      localStorage.setItem("ItemObjArray", JSON.stringify(updatedStorage));
     }
 
-    /**
-     * Item DOESN'T exist and action value is more than 0
-     * @returns array with new object and variable with new totalXp value
-     */
-    if (!existingItem) {
-      updatedItems = state.items.concat(action.item);
-    }
-
-    // * (1 + action.totalPercentageModifier);
     const updatedTotalAmount =
       state.totalItemXp +
       action.item.experience * action.item.amount -

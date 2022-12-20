@@ -20,6 +20,8 @@ const ItemXpQuantity = (props) => {
     props.onAddToItemXp(itemQuantity);
   };
 
+  let value = props.amount === 0 ? "" : props.amount;
+
   return (
     <form className={classes.form} onSubmit={submitHandler}>
       <Input
@@ -30,7 +32,7 @@ const ItemXpQuantity = (props) => {
           type: "number",
           min: "0",
           max: "2147483647",
-          defaultValue: "",
+          defaultValue: value,
         }}
       />
       <button>Add</button>

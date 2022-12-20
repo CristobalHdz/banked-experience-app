@@ -83,7 +83,10 @@ const ItemData = (props) => {
           mdBp={4}
           tableStyle={{ borderTop: { xs: 0.5, md: 0 } }}
         >
-          <ItemXpQuantity onAddToItemXp={addToItemHandler} />
+          <ItemXpQuantity
+            onAddToItemXp={addToItemHandler}
+            amount={props.amount}
+          />
         </TableLayoutItem>
       </Grid>
     </>

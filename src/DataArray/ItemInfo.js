@@ -10,6 +10,7 @@ const itemInfo = [
     experience: 10.6,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_karambwanji.png?02510",
+    amount: 0,
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ const itemInfo = [
     experience: 31.8,
     member: false,
     imageUrl: "https://runescape.wiki/images/Raw_shrimps.png?575eb",
+    amount: 0,
   },
   {
     id: 3,
@@ -26,6 +28,7 @@ const itemInfo = [
     experience: 31.8,
     member: false,
     imageUrl: "https://runescape.wiki/images/Raw_anchovies.png?4cd31",
+    amount: 0,
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ const itemInfo = [
     experience: 31.8,
     member: false,
     imageUrl: "https://runescape.wiki/images/Raw_minnow.png?0c1ff",
+    amount: 0,
   },
   {
     id: 5,
@@ -42,6 +46,7 @@ const itemInfo = [
     experience: 31.8,
     member: false,
     imageUrl: "https://runescape.wiki/images/Raw_crayfish.png?3c61f",
+    amount: 0,
   },
   {
     id: 6,
@@ -50,6 +55,7 @@ const itemInfo = [
     experience: 42.4,
     member: false,
     imageUrl: "https://runescape.wiki/images/Raw_sardine.png?604e8",
+    amount: 0,
   },
   {
     id: 7,
@@ -58,6 +64,7 @@ const itemInfo = [
     experience: 201.4,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_karambwan.png?eef09",
+    amount: 0,
   },
   {
     id: 8,
@@ -66,6 +73,7 @@ const itemInfo = [
     experience: 53,
     member: false,
     imageUrl: "https://runescape.wiki/images/Raw_herring.png?ee947",
+    amount: 0,
   },
   {
     id: 9,
@@ -74,6 +82,7 @@ const itemInfo = [
     experience: 31.8,
     member: false,
     imageUrl: "https://runescape.wiki/images/Raw_mackerel.png?38816",
+    amount: 0,
   },
   {
     id: 10,
@@ -82,6 +91,7 @@ const itemInfo = [
     experience: 74.2,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_trout.png?4efd3",
+    amount: 0,
   },
   {
     id: 11,
@@ -90,6 +100,7 @@ const itemInfo = [
     experience: 79.5,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_cod.png?95ab4",
+    amount: 0,
   },
   {
     id: 12,
@@ -98,6 +109,7 @@ const itemInfo = [
     experience: 84.8,
     member: false,
     imageUrl: "https://runescape.wiki/images/Raw_pike.png?a1ee3",
+    amount: 0,
   },
   {
     id: 13,
@@ -106,6 +118,7 @@ const itemInfo = [
     experience: 95.4,
     member: false,
     imageUrl: "https://runescape.wiki/images/Raw_salmon.png?ab536",
+    amount: 0,
   },
   {
     id: 14,
@@ -114,6 +127,7 @@ const itemInfo = [
     experience: 100.7,
     member: true,
     imageUrl: "https://runescape.wiki/images/Slimy_eel.png?3e4b8",
+    amount: 0,
   },
   {
     id: 15,
@@ -122,6 +136,7 @@ const itemInfo = [
     experience: 106,
     member: false,
     imageUrl: "https://runescape.wiki/images/Raw_tuna.png?005cb",
+    amount: 0,
   },
   {
     id: 16,
@@ -130,6 +145,7 @@ const itemInfo = [
     experience: 116.6,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_rainbow_fish.png?e0f27",
+    amount: 0,
   },
   {
     id: 17,
@@ -138,6 +154,7 @@ const itemInfo = [
     experience: 121.9,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_cave_eel.png?77026",
+    amount: 0,
   },
   {
     id: 18,
@@ -146,6 +163,7 @@ const itemInfo = [
     experience: 127.2,
     member: false,
     imageUrl: "https://runescape.wiki/images/Raw_lobster.png?57ddd",
+    amount: 0,
   },
   {
     id: 19,
@@ -154,6 +172,7 @@ const itemInfo = [
     experience: 137.8,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_bass.png?04af1",
+    amount: 0,
   },
   {
     id: 20,
@@ -162,6 +181,7 @@ const itemInfo = [
     experience: 148.4,
     member: false,
     imageUrl: "https://runescape.wiki/images/Raw_swordfish.png?2bf97",
+    amount: 0,
   },
   {
     id: 21,
@@ -170,6 +190,7 @@ const itemInfo = [
     experience: 151.1,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_desert_sole.png?e9b22",
+    amount: 0,
   },
   {
     id: 22,
@@ -178,6 +199,7 @@ const itemInfo = [
     experience: 31.8,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_lava_eel.png?4f671",
+    amount: 0,
   },
   {
     id: 23,
@@ -186,6 +208,7 @@ const itemInfo = [
     experience: 153.7,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_catfish.png?a5482",
+    amount: 0,
   },
   {
     id: 24,
@@ -194,6 +217,7 @@ const itemInfo = [
     experience: 159,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_monkfish.png?ef04c",
+    amount: 0,
   },
   {
     id: 25,
@@ -202,6 +226,7 @@ const itemInfo = [
     experience: 174.9,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_beltfish.png?f0df9",
+    amount: 0,
   },
   {
     id: 26,
@@ -211,6 +236,7 @@ const itemInfo = [
     member: true,
     imageUrl:
       "https://runescape.wiki/images/Raw_green_blubber_jellyfish.png?1ee03",
+    amount: 0,
   },
   {
     id: 27,
@@ -219,6 +245,7 @@ const itemInfo = [
     experience: 222.6,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_shark.png?06de7",
+    amount: 0,
   },
   {
     id: 28,
@@ -227,6 +254,7 @@ const itemInfo = [
     experience: 224,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_sea_turtle.png?cacbf",
+    amount: 0,
   },
   {
     id: 29,
@@ -235,6 +263,7 @@ const itemInfo = [
     experience: 224.7,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_great_white_shark.png?7ac63",
+    amount: 0,
   },
   {
     id: 30,
@@ -243,6 +272,7 @@ const itemInfo = [
     experience: 127.2,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_tarpon.png?3e309",
+    amount: 0,
   },
   {
     id: 32,
@@ -251,6 +281,7 @@ const itemInfo = [
     experience: 127.2,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_sillago.png?06638",
+    amount: 0,
   },
   {
     id: 33,
@@ -259,6 +290,7 @@ const itemInfo = [
     experience: 127.2,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_seerfish.png?a0331",
+    amount: 0,
   },
   {
     id: 34,
@@ -267,6 +299,7 @@ const itemInfo = [
     experience: 229.3,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_manta_ray.png?969c4",
+    amount: 0,
   },
   {
     id: 35,
@@ -275,6 +308,7 @@ const itemInfo = [
     experience: 238.5,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_rocktail.png?f05cc",
+    amount: 0,
   },
   {
     id: 36,
@@ -283,6 +317,7 @@ const itemInfo = [
     experience: 243.8,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_tiger_shark.png?b887b",
+    amount: 0,
   },
   {
     id: 37,
@@ -292,6 +327,7 @@ const itemInfo = [
     member: true,
     imageUrl:
       "https://runescape.wiki/images/Raw_blue_blubber_jellyfish.png?83f73",
+    amount: 0,
   },
   {
     id: 38,
@@ -300,6 +336,7 @@ const itemInfo = [
     experience: 254.4,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_wobbegong.png?e1d81",
+    amount: 0,
   },
   {
     id: 39,
@@ -308,6 +345,7 @@ const itemInfo = [
     experience: 286.2,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_sailfish.png?6f620",
+    amount: 0,
   },
   {
     id: 40,
@@ -316,6 +354,7 @@ const itemInfo = [
     experience: 226.8,
     member: true,
     imageUrl: "https://runescape.wiki/images/Raw_cavefish.png?8ff98",
+    amount: 0,
   },
   {
     id: 41,
@@ -324,6 +363,7 @@ const itemInfo = [
     experience: 159,
     member: true,
     imageUrl: "https://runescape.wiki/images/Great_maki.png?d4cf7",
+    amount: 0,
   },
   {
     id: 42,
@@ -332,6 +372,7 @@ const itemInfo = [
     experience: 190.8,
     member: true,
     imageUrl: "https://runescape.wiki/images/Great_gunkan.png?c544c",
+    amount: 0,
   },
   {
     id: 43,
@@ -340,6 +381,7 @@ const itemInfo = [
     experience: 530,
     member: true,
     imageUrl: "https://runescape.wiki/images/Rocktail_soup.png?22d32",
+    amount: 0,
   },
   {
     id: 44,
@@ -348,6 +390,7 @@ const itemInfo = [
     experience: 768.5,
     member: true,
     imageUrl: "https://runescape.wiki/images/Rocktail_soup.png?22d32",
+    amount: 0,
   },
   {
     id: 45,
@@ -356,6 +399,7 @@ const itemInfo = [
     experience: 137.8,
     member: true,
     imageUrl: "https://runescape.wiki/images/Arc_gumbo.png?d8698",
+    amount: 0,
   },
   {
     id: 46,
@@ -364,6 +408,7 @@ const itemInfo = [
     experience: 254.4,
     member: true,
     imageUrl: "https://runescape.wiki/images/Shark_soup.png?98ce4",
+    amount: 0,
   },
   {
     id: 47,
@@ -372,6 +417,7 @@ const itemInfo = [
     experience: 636,
     member: true,
     imageUrl: "https://runescape.wiki/images/Sailfish_soup.png?516ff",
+    amount: 0,
   },
   {
     id: 48,
@@ -380,6 +426,7 @@ const itemInfo = [
     experience: 922.2,
     member: true,
     imageUrl: "https://runescape.wiki/images/Sailfish_soup.png?516ff",
+    amount: 0,
   },
 ];
 

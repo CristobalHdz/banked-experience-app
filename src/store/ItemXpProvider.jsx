@@ -30,6 +30,19 @@ const ItemXpReducer = (state, action) => {
 
     const existingItem = state.items[existingItemIndex];
     let updatedItems;
+    let storageArray = [];
+
+    if (localStorage.getItem("ItemObjArray") === null) {
+      localStorage.setItem("ItemObjArray", JSON.stringify(storageArray));
+    }
+
+    /**
+     * Item DOESN'T exist and action value is more than 0
+     * @returns array with new object and variable with new totalXp value
+     */
+    if (!existingItem) {
+      updatedItems = state.items.concat(action.item);
+    }
 
     /**
      * Item exists and action value is more than 0
@@ -52,15 +65,6 @@ const ItemXpReducer = (state, action) => {
       updatedItems = state.items.filter((item) => item.id !== action.item.id);
     }
 
-    /**
-     * Item DOESN'T exist and action value is more than 0
-     * @returns array with new object and variable with new totalXp value
-     */
-    if (!existingItem) {
-      updatedItems = state.items.concat(action.item);
-    }
-
-    // * (1 + action.totalPercentageModifier);
     const updatedTotalAmount =
       state.totalItemXp +
       action.item.experience * action.item.amount -
@@ -98,6 +102,8 @@ const ItemXpReducer = (state, action) => {
       updatedTotalXp =
         (existingTotalXp + action.item.dwarvenAxe) * accXpMod + bonusXp;
     }
+
+    localStorage.setItem("ItemObjArray", JSON.stringify(state.items));
 
     return {
       items: state.items,

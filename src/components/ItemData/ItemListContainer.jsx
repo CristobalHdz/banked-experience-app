@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import TableLayout from "../UiHelpers/TableLayout";
 import ItemData from "./ItemData";
 import itemInfo from "../../DataArray/ItemInfo";
@@ -42,13 +41,16 @@ const ItemListContainer = (props) => {
     <>
       {filterData.map((data) => {
         let storageAmount;
-        const index = localStorageValue.findIndex((item) => {
-          return item.id == data.id;
-        });
+        if (JSON.parse(localStorage.getItem("ItemObjArray")) !== null) {
+          const index = localStorageValue.findIndex((item) => {
+            return item.id == data.id;
+          });
 
-        if (index > -1) {
-          storageAmount = localStorageValue[index].amount;
+          if (index > -1) {
+            storageAmount = localStorageValue[index].amount;
+          }
         }
+
         return (
           <TableLayout key={data.id}>
             <ItemData

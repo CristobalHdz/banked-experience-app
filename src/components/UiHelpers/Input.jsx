@@ -18,7 +18,7 @@ const Input = React.forwardRef((props, ref) => {
   return (
     <div className={theme}>
       <label htmlFor={props.input.id}>{props.label}</label>
-      <input id={props.id} ref={ref} {...props.input} />
+      <input id={"id_" + props.id} ref={ref} {...props.input} />
     </div>
   );
 });

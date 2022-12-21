@@ -97,7 +97,6 @@ const ItemXpModifiers = (props) => {
           input={{
             min: "0",
             type: "number",
-            defaultValue: "0",
           }}
         />
         <Grid item xs="auto" md={1}></Grid>

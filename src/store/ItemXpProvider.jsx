@@ -133,14 +133,6 @@ const ItemXpProvider = (props) => {
     dispatchItemAction({ type: "XP_MODIFIER", item: item });
   };
 
-  const clearItemXpHandler = () => {
-    dispatchItemAction({ type: "CLEAR_XP" });
-  };
-
-  const clearBonusXpHandler = () => {
-    dispatchItemAction({ type: "CLEAR_XP" });
-  };
-
   const clearAllHandler = () => {
     dispatchItemAction({ type: "CLEAR_ALL" });
   };
@@ -152,8 +144,6 @@ const ItemXpProvider = (props) => {
     bonusXpMod: itemXpState.bonusXpMod,
     bonusXpItems: itemXpState.bonusXpItems,
     addXpMod: addBonusXpHandler,
-    clearTotalItemXp: clearItemXpHandler,
-    clearTotalBonusXp: clearBonusXpHandler,
     clearAll: clearAllHandler,
   };
 

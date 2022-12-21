@@ -28,7 +28,7 @@ const ItemData = (props) => {
 
   return (
     <>
-      <Grid container sx={{ backgroundColor: "#917676", border: 1 }}>
+      <Grid container sx={{ backgroundColor: "#526181", border: 1 }}>
         {/* Member's icon */}
         <TableLayoutItem
           xsBp={12}

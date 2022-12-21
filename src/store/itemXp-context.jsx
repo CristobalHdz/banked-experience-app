@@ -12,8 +12,6 @@ const ItemXpContext = React.createContext({
   bonusXpItems: {},
   bonusXpMod: 0,
   addXpMod: (item) => {},
-  clearTotalItemXp: () => {},
-  clearTotalBonusXp: () => {},
   clearAll: () => {},
 });
 

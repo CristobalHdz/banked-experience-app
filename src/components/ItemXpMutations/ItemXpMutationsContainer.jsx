@@ -11,7 +11,6 @@ const ItemXpMutationsContainer = (props) => {
 
   const addToXpModHandler = (obj) => {
     xpModCtx.addXpMod(obj);
-    props.showXpHanlder(true);
   };
 
   const sortHandler = (selectValue) => {

@@ -10,6 +10,7 @@ import ClearData from "../components/ClearData/ClearData";
 const Mainview = () => {
   const [sortValue, setSortValue] = useState(0);
   const [filterValue, setFilterValue] = useState("");
+  const [xpState, setXpState] = useState(false);
   const itemCtx = useContext(itemContext);
   const { totalItemXp, bonusXpMod } = itemCtx;
 
@@ -21,12 +22,16 @@ const Mainview = () => {
     setFilterValue(value);
   };
 
+  const showXpHanlder = (value) => {
+    setSortValue(value);
+  };
+
   return (
     <Grid container justifyContent="center">
       <h1>The Mainview Page</h1>
 
       <Grid item xs={12}>
-        {!totalItemXp == 0 && (
+        {!totalItemXp == 0 && xpState && (
           <div>
             <h2>Experience without bonus xp modifiers: </h2>
             <h1>{Math.floor(totalItemXp).toLocaleString()}</h1>
@@ -45,6 +50,7 @@ const Mainview = () => {
         <ItemXpMutationsContainer
           sortHandler={sortHandler}
           filterHandler={filterHandler}
+          showXpHanlder={showXpHanlder}
         />
       </Grid>
 

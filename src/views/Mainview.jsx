@@ -15,6 +15,7 @@ const Mainview = () => {
   const [filterValue, setFilterValue] = useState("");
   const itemCtx = useContext(itemContext);
   const { totalItemXp, bonusXpMod } = itemCtx;
+  const minXpToShow = 9;
 
   const shownBaseXp =
     totalItemXp > 0
@@ -29,6 +30,8 @@ const Mainview = () => {
     setFilterValue(value);
   };
 
+  const showBonusXp = bonusXpMod !== shownBaseXp && bonusXpMod > minXpToShow;
+
   return (
     <Grid container justifyContent="center" className={classes.mainview}>
       <h1>Banked cooking experience</h1>
@@ -39,7 +42,7 @@ const Mainview = () => {
           <h1>{Math.floor(shownBaseXp).toLocaleString()}</h1>
         </div>
 
-        {bonusXpMod != shownBaseXp && bonusXpMod && (
+        {showBonusXp && (
           <div>
             <h2>Banked experience with bonuses</h2>
             <h1>{Math.floor(bonusXpMod).toLocaleString()}</h1>

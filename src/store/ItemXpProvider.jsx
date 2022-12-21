@@ -113,11 +113,10 @@ const ItemXpReducer = (state, action) => {
     };
   }
 
-  //   if (action.type === "CLEAR_XP") {
-  //   }
-
-  //   if (action.type === "CLEAR_PERCENTAGE") {
-  //   }
+  if (action.type === "CLEAR_ALL") {
+    localStorage.removeItem("ItemObjArray");
+    return defaultItemState;
+  }
 };
 
 const ItemXpProvider = (props) => {
@@ -134,6 +133,18 @@ const ItemXpProvider = (props) => {
     dispatchItemAction({ type: "XP_MODIFIER", item: item });
   };
 
+  const clearItemXpHandler = () => {
+    dispatchItemAction({ type: "CLEAR_XP" });
+  };
+
+  const clearBonusXpHandler = () => {
+    dispatchItemAction({ type: "CLEAR_XP" });
+  };
+
+  const clearAllHandler = () => {
+    dispatchItemAction({ type: "CLEAR_ALL" });
+  };
+
   const itemContext = {
     items: itemXpState.items,
     totalItemXp: itemXpState.totalItemXp,
@@ -141,6 +152,9 @@ const ItemXpProvider = (props) => {
     bonusXpMod: itemXpState.bonusXpMod,
     bonusXpItems: itemXpState.bonusXpItems,
     addXpMod: addBonusXpHandler,
+    clearTotalItemXp: clearItemXpHandler,
+    clearTotalBonusXp: clearBonusXpHandler,
+    clearAll: clearAllHandler,
   };
 
   return (

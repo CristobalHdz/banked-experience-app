@@ -1,0 +1,28 @@
+.clearData button {
+  font: inherit;
+  cursor: pointer;
+  background-color: #243462;
+  border: 1px solid #243462;
+  color: white;
+  padding: 0.25rem 8rem;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.clearData button:hover,
+.clearData button:active {
+  background-color: #354c92;
+  border-color: #354c92;
+}
+
+.clearData button:disabled {
+  font: inherit;
+  background-color: #cccccc;
+  border: 1px solid #999999;
+  color: #666666;
+  padding: 0.25rem 8rem;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}

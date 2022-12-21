@@ -8,6 +8,7 @@ import ItemListContainer from "../components/ItemData/ItemListContainer.jsx";
 import ClearData from "../components/ClearData/ClearData";
 
 import classes from "./Mainview.module.css";
+import ScrollBtn from "../components/UiHelpers/ScrollBtn";
 
 const Mainview = () => {
   const [sortValue, setSortValue] = useState(0);
@@ -60,6 +61,8 @@ const Mainview = () => {
       <Grid container justifyContent="center">
         <ItemListContainer filterValue={filterValue} sortValue={sortValue} />
       </Grid>
+
+      <ScrollBtn />
     </Grid>
   );
 };

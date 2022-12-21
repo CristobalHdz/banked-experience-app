@@ -15,6 +15,11 @@ const Mainview = () => {
   const itemCtx = useContext(itemContext);
   const { totalItemXp, bonusXpMod } = itemCtx;
 
+  const shownBaseXp =
+    totalItemXp > 0
+      ? totalItemXp
+      : JSON.parse(localStorage.getItem("BaseStoredXp"));
+
   const sortHandler = (value) => {
     setSortValue(value);
   };
@@ -30,10 +35,10 @@ const Mainview = () => {
       <Grid item xs={12}>
         <div>
           <h2>Banked base experience</h2>
-          <h1>{Math.floor(totalItemXp).toLocaleString()}</h1>
+          <h1>{Math.floor(shownBaseXp).toLocaleString()}</h1>
         </div>
 
-        {!bonusXpMod == 0 && (
+        {bonusXpMod != shownBaseXp && bonusXpMod && (
           <div>
             <h2>Banked experience with bonuses</h2>
             <h1>{Math.floor(bonusXpMod).toLocaleString()}</h1>
@@ -49,7 +54,7 @@ const Mainview = () => {
       </Grid>
 
       <Grid item xs={12} justifyContent="center">
-        <ClearData totalItemXp={totalItemXp} />
+        <ClearData totalItemXp={shownBaseXp} />
       </Grid>
 
       <Grid container justifyContent="center">

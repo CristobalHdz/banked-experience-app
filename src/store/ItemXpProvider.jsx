@@ -81,29 +81,39 @@ const ItemXpReducer = (state, action) => {
   }
 
   if (action.type === "XP_MODIFIER") {
-    const existingTotalXp = state.totalItemXp;
-    const existingXpModItems = { ...state.bonusXpMod };
+    // Check if the item state was updated. If not, then grab local storage
+    const flagChangeXp = state.totalItemXp != 0;
+    const existingTotalXp = flagChangeXp
+      ? state.totalItemXp
+      : JSON.parse(localStorage.getItem("BaseStoredXp"));
+
     let updatedXpModItems = { ...action.item };
     let updatedTotalXp = state.totalItemXp;
 
-    if (existingXpModItems != updatedXpModItems) {
-      let accXpMod =
-        1 +
-        (action.item.avatarBonus +
-          action.item.method +
-          action.item.outfitBonus) /
-          100;
+    // Get item xp modifier
+    let accXpMod =
+      1 +
+      (action.item.avatarBonus + action.item.method + action.item.outfitBonus) /
+        100;
 
-      const bonusXp =
+    let bonusXp;
+    if (action.item.customBonus > 0) {
+      bonusXp =
         existingTotalXp > action.item.customBonus
           ? action.item.customBonus
           : existingTotalXp;
-
-      updatedTotalXp =
-        (existingTotalXp + action.item.dwarvenAxe) * accXpMod + bonusXp;
+    } else {
+      bonusXp = 0;
     }
 
-    localStorage.setItem("ItemObjArray", JSON.stringify(state.items));
+    updatedTotalXp =
+      (existingTotalXp + action.item.dwarvenAxe) * accXpMod + bonusXp;
+
+    // If the item and total xp state were changed, then setLocalStorage Items
+    if (flagChangeXp) {
+      localStorage.setItem("ItemObjArray", JSON.stringify(state.items));
+      localStorage.setItem("BaseStoredXp", JSON.stringify(state.totalItemXp));
+    }
 
     return {
       items: state.items,
@@ -115,6 +125,7 @@ const ItemXpReducer = (state, action) => {
 
   if (action.type === "CLEAR_ALL") {
     localStorage.removeItem("ItemObjArray");
+    localStorage.removeItem("BaseStoredXp");
     return defaultItemState;
   }
 };

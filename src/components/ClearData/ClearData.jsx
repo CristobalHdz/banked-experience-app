@@ -15,7 +15,7 @@ const ClearData = (props) => {
     location.reload();
   };
 
-  const disableBtn = props.totalItemXp == 0;
+  const disableBtn = props.totalItemXp == null;
 
   return (
     <Grid container className={classes.clearData} justifyContent="center">

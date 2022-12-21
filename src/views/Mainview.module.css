@@ -1,0 +1,9 @@
+.mainview {
+  padding: 2rem;
+  background-attachment: fixed;
+  background-size: 25% !important;
+  background-image: url("../assets/cooking_logo.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+}

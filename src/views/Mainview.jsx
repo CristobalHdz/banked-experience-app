@@ -7,12 +7,20 @@ import ItemXpMutationsContainer from "../components/ItemXpMutations/ItemXpMutati
 import ItemListContainer from "../components/ItemData/ItemListContainer.jsx";
 import ClearData from "../components/ClearData/ClearData";
 
+import classes from "./Mainview.module.css";
+import ScrollBtn from "../components/UiHelpers/ScrollBtn";
+
 const Mainview = () => {
   const [sortValue, setSortValue] = useState(0);
   const [filterValue, setFilterValue] = useState("");
-  const [xpState, setXpState] = useState(false);
   const itemCtx = useContext(itemContext);
   const { totalItemXp, bonusXpMod } = itemCtx;
+  const minXpToShow = 9;
+
+  const shownBaseXp =
+    totalItemXp > 0
+      ? totalItemXp
+      : JSON.parse(localStorage.getItem("BaseStoredXp"));
 
   const sortHandler = (value) => {
     setSortValue(value);
@@ -22,25 +30,21 @@ const Mainview = () => {
     setFilterValue(value);
   };
 
-  const showXpHanlder = (value) => {
-    setSortValue(value);
-  };
+  const showBonusXp = bonusXpMod !== shownBaseXp && bonusXpMod > minXpToShow;
 
   return (
-    <Grid container justifyContent="center">
-      <h1>The Mainview Page</h1>
+    <Grid container justifyContent="center" className={classes.mainview}>
+      <h1>Banked cooking experience</h1>
 
       <Grid item xs={12}>
-        {!totalItemXp == 0 && xpState && (
-          <div>
-            <h2>Experience without bonus xp modifiers: </h2>
-            <h1>{Math.floor(totalItemXp).toLocaleString()}</h1>
-          </div>
-        )}
+        <div>
+          <h2>Banked base experience</h2>
+          <h1>{Math.floor(shownBaseXp).toLocaleString()}</h1>
+        </div>
 
-        {!bonusXpMod == 0 && (
+        {showBonusXp && (
           <div>
-            <h2>Experience with bonus xp modifiers: </h2>
+            <h2>Banked experience with bonuses</h2>
             <h1>{Math.floor(bonusXpMod).toLocaleString()}</h1>
           </div>
         )}
@@ -50,17 +54,18 @@ const Mainview = () => {
         <ItemXpMutationsContainer
           sortHandler={sortHandler}
           filterHandler={filterHandler}
-          showXpHanlder={showXpHanlder}
         />
       </Grid>
 
       <Grid item xs={12} justifyContent="center">
-        <ClearData totalItemXp={totalItemXp} />
+        <ClearData totalItemXp={shownBaseXp} />
       </Grid>
 
       <Grid container justifyContent="center">
         <ItemListContainer filterValue={filterValue} sortValue={sortValue} />
       </Grid>
+
+      <ScrollBtn />
     </Grid>
   );
 };

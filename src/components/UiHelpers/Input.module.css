@@ -1,0 +1,48 @@
+.input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.input label {
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.input input {
+  width: 3rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font: inherit;
+  padding-left: 0.5rem;
+}
+
+@media only screen and (min-width: 400px) and (max-width: 499px) {
+  .input input {
+    width: 8rem;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 899px) {
+  .input input {
+    width: 12rem;
+  }
+}
+
+@media only screen and (min-width: 1060px) and (max-width: 1700px) {
+  .input input {
+    width: 6rem;
+  }
+}
+
+@media only screen and (min-width: 1701px) {
+  .input input {
+    width: 8rem;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

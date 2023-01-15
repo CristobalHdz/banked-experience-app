@@ -13,6 +13,7 @@ import ScrollBtn from "../components/UiHelpers/ScrollBtn";
 const Mainview = () => {
   const [sortValue, setSortValue] = useState(0);
   const [filterValue, setFilterValue] = useState("");
+  const [filterExisting, setFilterExisting] = useState("");
   const itemCtx = useContext(itemContext);
   const { totalItemXp, bonusXpMod } = itemCtx;
   const minXpToShow = 9;
@@ -28,6 +29,10 @@ const Mainview = () => {
 
   const filterHandler = (value) => {
     setFilterValue(value);
+  };
+
+  const filterExistingHandler = (value) => {
+    setFilterExisting(value);
   };
 
   const showBonusXp = bonusXpMod !== shownBaseXp && bonusXpMod > minXpToShow;
@@ -54,6 +59,7 @@ const Mainview = () => {
         <ItemXpMutationsContainer
           sortHandler={sortHandler}
           filterHandler={filterHandler}
+          filterExistingHandler={filterExistingHandler}
         />
       </Grid>
 
@@ -62,7 +68,11 @@ const Mainview = () => {
       </Grid>
 
       <Grid container justifyContent="center">
-        <ItemListContainer filterValue={filterValue} sortValue={sortValue} />
+        <ItemListContainer
+          filterValue={filterValue}
+          sortValue={sortValue}
+          filterExisting={filterExisting}
+        />
       </Grid>
 
       <ScrollBtn />

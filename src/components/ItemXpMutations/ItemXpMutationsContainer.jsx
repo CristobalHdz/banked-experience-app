@@ -5,6 +5,7 @@ import DropdownSort from "../UiHelpers/DropdownSort";
 import ItemSearch from "./ItemSearch";
 import ItemXpModifiers from "./ItemXpModifiers";
 import ItemXpContext from "../../store/itemXp-context";
+import ExistingItemFilter from "./ExistingItemFilter";
 
 const ItemXpMutationsContainer = (props) => {
   const xpModCtx = useContext(ItemXpContext);
@@ -19,6 +20,10 @@ const ItemXpMutationsContainer = (props) => {
 
   const searchHandler = (selectValue) => {
     props.filterHandler(selectValue);
+  };
+
+  const filterExistingHandler = (selectValue) => {
+    props.filterExistingHandler(selectValue);
   };
 
   const dropDownData = [
@@ -40,6 +45,9 @@ const ItemXpMutationsContainer = (props) => {
       </Grid>
       <Grid item xs={12} md={6} marginBottom="1rem">
         <ItemSearch onFilterText={searchHandler} />
+      </Grid>
+      <Grid item xs={12} md={6} justifyContent="center" marginBottom="1rem">
+        <ExistingItemFilter onFilterExisting={filterExistingHandler} />
       </Grid>
       <Grid item xs={12}>
         <h2>Item xp modifier</h2>

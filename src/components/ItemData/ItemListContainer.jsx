@@ -28,6 +28,12 @@ const filterItemArray = (filterValue, itemArray) => {
     : itemArray;
 };
 
+const filterExistingValue = (filterExisting, itemArray) => {
+  return filterExisting
+    ? itemArray.filter((data) => data.amount.length > 0)
+    : itemArray;
+};
+
 const ItemListContainer = (props) => {
   let copyArray = [...itemInfo];
   const localStorageValue = JSON.parse(localStorage.getItem("ItemObjArray"));
@@ -48,6 +54,10 @@ const ItemListContainer = (props) => {
 
           if (index > -1) {
             storageAmount = localStorageValue[index].amount;
+          }
+
+          if (props.filterExisting && !storageAmount) {
+            return;
           }
         }
 

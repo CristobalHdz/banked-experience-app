@@ -12,6 +12,7 @@ const ExistingItemFilter = (props) => {
   return (
     <form onChange={searchHandler}>
       <ItemModifier
+        sizeReset={0}
         id="ExistingFilter"
         ref={filterExistingRef}
         label="Show only filled items"

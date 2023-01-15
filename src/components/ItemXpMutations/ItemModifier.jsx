@@ -6,7 +6,13 @@ import Grid from "@mui/material/Grid";
 
 const ItemModifier = React.forwardRef((props, ref) => {
   return (
-    <Grid item xs={12} sm={6} md={4} marginBottom="2rem">
+    <Grid
+      item
+      xs={12}
+      sm={props.sizeReset == 0 ? props.sizeReset : 6}
+      md={props.sizeReset == 0 ? props.sizeReset : 4}
+      marginBottom="2rem"
+    >
       {props.typeInput == "DropDown" && (
         <Dropdown
           id={props.id}

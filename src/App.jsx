@@ -15,14 +15,15 @@ function App() {
     <ItemXpProvider className="App">
       <main>
         <Routes>
-          <Route path="/" element={<Navigate replace to="/welcome" />} />
-          <Route path="/welcome" element={<Mainview />} />
+          <Route path="/" element={<Navigate replace to="/cooking" />} />
+          <Route path="/cooking" element={<Mainview />} />
 
           {/* <Route path="/welcome" element={<Welcome />}>
             <Route path="new-user" element={<p>Welcome, new user!</p>}></Route>
           </Route>
           <Route path="/products" element={<Products />} />
           <Route path="/products/:productId" element={<ProductDetail />} /> */}
+          <Route path="*" element={<Navigate replace to="/cooking" />} />
         </Routes>
       </main>
     </ItemXpProvider>

@@ -16,14 +16,14 @@ const ItemXpQuantity = (props) => {
     event.preventDefault();
 
     const itemQuantity = amountInputRef.current.value;
-
+    console.log(itemQuantity);
     props.onAddToItemXp(itemQuantity);
   };
 
   let value = props.amount === 0 ? "" : props.amount;
 
   return (
-    <form className={classes.form} onSubmit={submitHandler}>
+    <form className={classes.form} onBlur={submitHandler}>
       <Input
         ref={amountInputRef}
         label="Amount"
@@ -35,7 +35,6 @@ const ItemXpQuantity = (props) => {
           defaultValue: value,
         }}
       />
-      <button>Add</button>
     </form>
   );
 };

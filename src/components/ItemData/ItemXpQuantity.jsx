@@ -35,7 +35,7 @@ const ItemXpQuantity = (props) => {
           defaultValue: value,
         }}
       />
-      <button>Add</button>
+      <button>Change</button>
     </form>
   );
 };

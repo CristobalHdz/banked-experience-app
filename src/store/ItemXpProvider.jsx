@@ -82,12 +82,24 @@ const ItemXpReducer = (state, action) => {
   if (action.type === "XP_MODIFIER") {
     // Check if the item state was updated. If not, then grab local storage
     const flagChangeXp = state.totalItemXp != 0;
+    const dwarvenXpValue = 3;
+    let totalItemsDwavenXp;
     const existingTotalXp = flagChangeXp
       ? state.totalItemXp
       : JSON.parse(localStorage.getItem("BaseStoredXp"));
 
     let updatedXpModItems = { ...action.item };
     let updatedTotalXp = state.totalItemXp;
+
+    /**
+     * Dwarven Axe is active
+     * @returns value multiplied by 3
+     */
+    if (action.item.dwarvenAxe) {
+      totalItemsDwavenXp =
+        state.items.reduce((sum, item) => sum + parseInt(item.amount), 0) *
+        dwarvenXpValue;
+    }
 
     // Get item xp modifier
     let accXpMod =
@@ -105,8 +117,7 @@ const ItemXpReducer = (state, action) => {
       bonusXp = 0;
     }
 
-    updatedTotalXp =
-      (existingTotalXp + action.item.dwarvenAxe) * accXpMod + bonusXp;
+    updatedTotalXp = existingTotalXp * accXpMod + bonusXp + totalItemsDwavenXp;
 
     // If the item and total xp state were changed, then setLocalStorage Items
     if (flagChangeXp) {

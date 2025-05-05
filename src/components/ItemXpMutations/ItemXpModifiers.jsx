@@ -49,6 +49,7 @@ const ItemXpModifiers = (props) => {
     { name: "Priffdinas bonfire (0%)", value: 0 },
     { name: "Bonfire (10%)", value: 10 },
     { name: "Portable Range (25%)", value: 25 },
+    { name: "Fort Kitchen t3 (5%)", value: 5 },
   ];
 
   return (
